@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.autosell.controller.HomepageController">
+    <children>
+        <AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;">
+            <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="85.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: black;" width="1280.0" />
+                <TextField editable="false" focusTraversable="false" layoutX="452.0" layoutY="14.0" prefHeight="61.0" prefWidth="127.0" style="-fx-background-color: black; -fx-text-fill: white;" text="Annunci">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+                </TextField>
+                <MenuButton layoutX="572.0" layoutY="34.0" mnemonicParsing="false" style="-fx-background-color: black; -fx-text-fill: white;">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Ricerca" />
+                        <MenuItem fx:id="ricercaAvanzata" mnemonicParsing="false" onAction="#setAdvancedResearch" text="Ricerca avanzata" />
+                        <MenuItem mnemonicParsing="false" text="Tutte le auto" />
+                    </items>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+                </MenuButton>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="3.0" layoutY="84.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: white;" width="1280.0" />
+                <ImageView fitHeight="61.0" fitWidth="73.0" layoutX="183.0" layoutY="11.0">
+                    <image>
+                        <Image url="@../Icons_and_pics/Logoicon.png" />
+                    </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+                </ImageView>
+                <ImageView fitHeight="633.0" fitWidth="171.0" layoutX="1109.0" layoutY="87.0">
+                    <image>
+                        <Image url="@../Icons_and_pics/black.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="639.0" fitWidth="171.0" layoutY="86.0">
+                    <image>
+                        <Image url="@../Icons_and_pics/black.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="445.0" fitWidth="938.0" layoutX="171.0" layoutY="86.0">
+                    <image>
+                        <Image url="@../Icons_and_pics/Homepagestelvio.jpg" />
+                    </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+                </ImageView>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="245.0" layoutX="171.0" layoutY="480.0" stroke="WHITE" strokeType="INSIDE" width="938.0" />
+                <TextField editable="false" focusTraversable="false" layoutX="183.0" layoutY="167.0" prefHeight="126.0" prefWidth="369.0" style="-fx-background-color: image; -fx-text-fill: white;" text=" Scopri subito i">
+                    <font>
+                        <Font name="System Italic" size="48.0" />
+                    </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+                </TextField>
+                <TextField editable="false" focusTraversable="false" layoutX="202.0" layoutY="231.0" prefHeight="126.0" prefWidth="349.0" style="-fx-background-color: image; -fx-text-fill: white;" text="nuovi arrivi!">
+                    <font>
+                        <Font name="System Italic" size="48.0" />
+                    </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+                </TextField>
+                <TextField editable="false" layoutX="172.0" layoutY="482.0" prefHeight="50.0" prefWidth="297.0" style="-fx-background-color: white; -fx-text-style: bold;" text="Le nostre vetture :">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </TextField>
+                <GridPane gridLinesVisible="true" layoutX="178.0" layoutY="531.0" prefHeight="50.0" prefWidth="924.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <TextField alignment="CENTER" editable="false" prefHeight="55.0" prefWidth="185.0" text="Tesla">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                        </TextField>
+                        <TextField alignment="CENTER" editable="false" prefHeight="50.0" prefWidth="178.0" text="Alfa Romeo" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                        </TextField>
+                        <TextField alignment="CENTER" editable="false" prefHeight="56.0" prefWidth="185.0" text="Mercedes" GridPane.columnIndex="3">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                        </TextField>
+                        <TextField alignment="CENTER" editable="false" prefHeight="52.0" prefWidth="185.0" text="BMW" GridPane.columnIndex="2">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                        </TextField>
+                        <TextField alignment="CENTER" editable="false" prefHeight="51.0" prefWidth="185.0" text="Audi" GridPane.columnIndex="1">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                        </TextField>
+                    </children>
+                </GridPane>
+                <ImageView fitHeight="71.0" fitWidth="73.0" layoutX="270.0" layoutY="616.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../Icons_and_pics/Teslaicon.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="86.0" fitWidth="83.0" layoutX="797.0" layoutY="610.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../Icons_and_pics/Maseratiicon.png" />
+                    </image>
+                </ImageView>
+                <Button fx:id="buttonLogin" layoutX="1146.0" layoutY="17.0" mnemonicParsing="false" onAction="#userLogin" style="-fx-background-color: black; -fx-text-fill: white;" text="Login">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button layoutX="5.0" layoutY="9.0" mnemonicParsing="false" style="-fx-background-color: black; -fx-text-fill: white;" text="Autosell">
+                    <font>
+                        <Font name="System Bold" size="34.0" />
+                    </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+                </Button>
+                <Button layoutX="353.0" layoutY="627.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="135.0" style="-fx-text-fill: green; -fx-background-color: white; -fx-border-color: black; -fx-border-radius: 11;" text="Elettrico">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button layoutX="888.0" layoutY="626.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="127.0" style="-fx-text-fill: black; -fx-background-color: white; -fx-border-color: black; -fx-border-radius: 11;" text="Termico">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Label fx:id="labelLoggedUser" alignment="CENTER_RIGHT" layoutX="845.0" layoutY="28.0" prefHeight="38.0" prefWidth="399.0" textFill="WHITE" visible="false">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Button fx:id="buttonInsertButton" layoutX="727.0" layoutY="19.0" mnemonicParsing="false" onAction="#insert" style="-fx-background-color: black; -fx-text-fill: white;" text="Inserisci">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            <MenuButton fx:id="menuButtonProfile" layoutX="1244.0" layoutY="35.0" mnemonicParsing="false" style="-fx-background-color: black;" visible="false">
+              <items>
+                <MenuItem fx:id="menuItemProfile" mnemonicParsing="false" onAction="#setUserPage" text="Il mio profilo" />
+                <MenuItem fx:id="menuItemLogout" mnemonicParsing="false" onAction="#logout" text="Logout" />
+              </items>
+            </MenuButton>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
