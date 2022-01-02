@@ -1,0 +1,7 @@
+COSE DA FARE:
+1. Eccezioni personalizzate
+2. Registrazione con Google e Facebook API
+3. Spostare la roba da automobile ad annuncio (deve farlo luisi) //non ricordo se già lo ha fatto o meno quindi l'ho lasciato
+4. Aggiungere il rettangolo colorato che checka la sicurezza della password (famolo)
+
+COSE DA CONSIDERARE:
