@@ -42,7 +42,7 @@ public class Main extends Application {
         URL fxmlURL = getClass().getResource("/com/autosell/controller/Homepage.fxml");
         Parent root = FXMLLoader.load(fxmlURL);
         Scene scene = new Scene(root,1280, 720);
-        scene.getStylesheets().add(getClass().getResource("/com/autosell/css/password_strength_css.css").toExternalForm());
+        //scene.getStylesheets().add(getClass().getResource("/com/autosell/css/password_strength_css.css").toExternalForm());
         stg = primaryStage;
         stg.setResizable(false);
         stg.setTitle("Autosell");
@@ -55,7 +55,7 @@ public class Main extends Application {
         URL finalFxml = getClass().getResource("/com/autosell/controller/" + fxml);
         Parent root = FXMLLoader.load(finalFxml);
         Scene scene = new Scene(root,1280, 720);
-        scene.getStylesheets().add(getClass().getResource("/com/autosell/css/password_strength_css.css").toExternalForm());
+        //scene.getStylesheets().add(getClass().getResource("/com/autosell/css/password_strength_css.css").toExternalForm());
         stg.setScene(scene);
     }
 
