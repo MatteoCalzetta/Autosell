@@ -78,6 +78,9 @@ public class RegisterPrivatoController {
     @FXML
     private TextField tfSurname;
 
+    @FXML
+    private Label labelPwdStrength;
+
     private static RegisterPrivatoController INSTANCE;
 
     public static RegisterPrivatoController getInstance() {
@@ -92,7 +95,7 @@ public class RegisterPrivatoController {
     static MessageUtil messageUtil = MessageUtil.getInstance();
 
     public RegisterBean buildRegisterBean(){
-        return new RegisterBean(tfName, tfSurname, tfEmail, pfPassword, pfConfirmPassword, false);
+        return new RegisterBean(tfName, tfSurname, tfEmail, pfPassword, pfConfirmPassword, false, labelPwdStrength);
     }
 
     public RegisterErrorBean buildRegisterErrorBean(){

@@ -119,10 +119,24 @@
       <workItem from="1640273482810" duration="11993000" />
       <workItem from="1641122762968" duration="27000" />
       <workItem from="1641123053689" duration="731000" />
+      <workItem from="1641124407479" duration="67000" />
+      <workItem from="1641223956419" duration="6998000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="bean.pfPassword.text" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PROGETTO_ISPW$Main.ic" NAME="Main Coverage Results" MODIFIED="1641229320969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.autosell.*</FILTER>
+    </SUITE>
   </component>
 </project>

@@ -41,18 +41,22 @@ public class Main extends Application {
 
         URL fxmlURL = getClass().getResource("/com/autosell/controller/Homepage.fxml");
         Parent root = FXMLLoader.load(fxmlURL);
+        Scene scene = new Scene(root,1280, 720);
+        scene.getStylesheets().add(getClass().getResource("/com/autosell/css/password_strength_css.css").toExternalForm());
         stg = primaryStage;
         stg.setResizable(false);
         stg.setTitle("Autosell");
-        stg.setScene(new Scene(root,1280, 720));
+        stg.setScene(scene);
         stg.show();
 
     }
 
     public void changeScene(String fxml) throws IOException {
-            URL finalFxml = getClass().getResource("/com/autosell/controller/" + fxml);
-            Parent root = FXMLLoader.load(finalFxml);
-            stg.setScene(new Scene(root, 1280, 720));
+        URL finalFxml = getClass().getResource("/com/autosell/controller/" + fxml);
+        Parent root = FXMLLoader.load(finalFxml);
+        Scene scene = new Scene(root,1280, 720);
+        scene.getStylesheets().add(getClass().getResource("/com/autosell/css/password_strength_css.css").toExternalForm());
+        stg.setScene(scene);
     }
 
     public static void main(String[] args) { launch(); }

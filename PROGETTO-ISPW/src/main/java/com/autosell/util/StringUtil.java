@@ -14,7 +14,8 @@ public class StringUtil {
 		return str1.toLowerCase().contains(str2.toLowerCase());
 	}
 
-    private static int calculatePasswordStrength(String password){
+    public int calculatePasswordStrength(String password){
+        //3 -> 4 = DEBOLE, 5 -> 6 = MEDIA, 7 -> 10 = FORTE
         int passwordScore = 0;
 
         if(password.length() < 6) {

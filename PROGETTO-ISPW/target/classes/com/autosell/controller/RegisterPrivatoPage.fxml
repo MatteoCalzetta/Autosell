@@ -88,7 +88,7 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
                 </TextField>
-                <Label fx:id="errorPassword" layoutX="194.0" layoutY="363.0" prefHeight="38.0" prefWidth="295.0" text="Password is not valid!" textFill="RED" visible="false">
+                <Label fx:id="errorPassword" layoutX="194.0" layoutY="363.0" prefHeight="38.0" prefWidth="259.0" text="Password is not valid!" textFill="RED" visible="false">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -142,6 +142,11 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </PasswordField>
+            <Label fx:id="labelPwdStrength" alignment="CENTER_RIGHT" layoutX="472.0" layoutY="367.0" prefHeight="31.0" prefWidth="76.0" text="Too weak">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
     </children>

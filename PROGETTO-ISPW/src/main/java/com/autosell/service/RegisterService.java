@@ -77,6 +77,7 @@ public class RegisterService {
 	}
 
 	public boolean enableDisableRegisterPrivato(RegisterBean registerPrivatoBean) {
+		checkPasswordStrength(registerPrivatoBean);
 		return registerPrivatoBean.getTfName().getText().trim().isEmpty()
 				|| registerPrivatoBean.getTfSurname().getText().trim().isEmpty()
 				|| registerPrivatoBean.getTfEmail().getText().trim().isEmpty()
@@ -86,11 +87,33 @@ public class RegisterService {
 	}
 
 	public boolean enableDisableRegisterConcessionaria(RegisterBean registerConcessionariaBean) {
+		checkPasswordStrength(registerConcessionariaBean);
 		return registerConcessionariaBean.getTfEmail().getText().trim().isEmpty()
 				|| registerConcessionariaBean.getTfName().getText().trim().isEmpty()
 				|| registerConcessionariaBean.getPfPassword().getText().trim().isEmpty()
 				|| registerConcessionariaBean.getPfConfirmPassword().getText().trim().isEmpty()
 				|| registerConcessionariaBean.getTfAddress().getText().trim().isEmpty();
+	}
+
+	private void checkPasswordStrength(RegisterBean bean) {
+		int passwordStrength = stringUtil.calculatePasswordStrength(bean.getPfPassword().getText());
+		if (passwordStrength < 3) {
+			bean.getPfPassword().setStyle("-fx-background-color: white; -fx-border-color: black");
+			bean.getLabelPwdStrength().setStyle("-fx-text-fill: black");
+			bean.getLabelPwdStrength().setText("Too weak");
+		} else if (passwordStrength >= 3 && passwordStrength <= 4) {
+			bean.getPfPassword().setStyle("-fx-background-color: #ffebeb; -fx-border-color: red");
+			bean.getLabelPwdStrength().setStyle("-fx-text-fill: red");
+			bean.getLabelPwdStrength().setText("Weak");
+		} else if (passwordStrength >= 5 && passwordStrength <= 6) {
+			bean.getPfPassword().setStyle("-fx-background-color: #faf0c3; -fx-border-color: #cfb33a;");
+			bean.getLabelPwdStrength().setStyle("-fx-text-fill: #cfb33a;");
+			bean.getLabelPwdStrength().setText("Medium");
+		} else if (passwordStrength >= 7) {
+			bean.getPfPassword().setStyle("-fx-background-color: #d6ffd7; -fx-border-color: green;");
+			bean.getLabelPwdStrength().setStyle("-fx-text-fill: green;");
+			bean.getLabelPwdStrength().setText("Strong");
+		}
 	}
 
 	public Seller registerUser(Seller user) throws SQLException {

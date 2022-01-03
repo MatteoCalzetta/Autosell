@@ -81,6 +81,9 @@ public class RegisterConcessionariaController {
 	@FXML
 	private Label errorAddress;
 
+	@FXML
+	private Label labelPwdStrength;
+
 	private static RegisterPrivatoController INSTANCE;
 
 	public static RegisterPrivatoController getInstance() {
@@ -94,12 +97,12 @@ public class RegisterConcessionariaController {
 	static RegisterService registerService = RegisterService.getInstance();
 	static MessageUtil messageUtil = MessageUtil.getInstance();
 
-	public RegisterBean getRegisterConcessionariaBean() {
+	public RegisterBean buildRegisterConcessionariaBean() {
 		return new RegisterBean(tfName, tfAddress, tfEmail, pfPassword,
-				pfConfirmPassword, true);
+				pfConfirmPassword, true, labelPwdStrength);
 	}
 
-	public RegisterErrorBean getRegisterErrorConcessionariaBean() {
+	public RegisterErrorBean buildRegisterErrorConcessionariaBean() {
 		return new RegisterErrorBean(errorEmail, errorPassword,
 				errorConfirmPassword, errorAddress);
 	}
@@ -107,8 +110,8 @@ public class RegisterConcessionariaController {
 
 
 	public boolean checkFieldsConcessionaria() throws SQLException {
-		return registerService.checkFieldsConcessionaria(getRegisterConcessionariaBean(),
-				getRegisterErrorConcessionariaBean());
+		return registerService.checkFieldsConcessionaria(buildRegisterConcessionariaBean(),
+				buildRegisterErrorConcessionariaBean());
 	}
 
 	@FXML
@@ -128,7 +131,7 @@ public class RegisterConcessionariaController {
 
 	@FXML
 	void enableDisableRegister(KeyEvent event) {
-		buttonRegister.setDisable(registerService.enableDisableRegisterConcessionaria(getRegisterConcessionariaBean()));
+		buttonRegister.setDisable(registerService.enableDisableRegisterConcessionaria(buildRegisterConcessionariaBean()));
 	}
 
 	@FXML

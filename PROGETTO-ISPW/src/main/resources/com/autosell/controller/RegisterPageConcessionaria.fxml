@@ -84,7 +84,7 @@
                         <Font name="System Italic" size="18.0" />
                     </font>
                 </TextField>
-                <Label fx:id="errorPassword" layoutX="194.0" layoutY="363.0" prefHeight="38.0" prefWidth="295.0" text="Password non valida" textFill="RED" visible="false">
+                <Label fx:id="errorPassword" layoutX="194.0" layoutY="363.0" prefHeight="38.0" prefWidth="253.0" text="Password non valida" textFill="RED" visible="false">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -122,6 +122,11 @@
             <Label fx:id="errorAddress" layoutX="194.0" layoutY="635.0" prefHeight="38.0" prefWidth="295.0" text="Indirizzo non valido" textFill="RED" visible="false">
                <font>
                   <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelPwdStrength" alignment="CENTER_RIGHT" layoutX="472.0" layoutY="367.0" prefHeight="31.0" prefWidth="76.0" text="Too weak">
+               <font>
+                  <Font size="17.0" />
                </font>
             </Label>
             </children>
