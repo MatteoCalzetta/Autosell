@@ -9,7 +9,10 @@ import com.autosell.util.MessageUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Rectangle;
 
@@ -18,13 +21,13 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class InformationPrivatoController implements Initializable {
+public class InformationConcessionariaController implements Initializable {
 
-    private static InformationPrivatoController INSTANCE;
+    private static InformationConcessionariaController INSTANCE;
 
-    public static InformationPrivatoController getInstance() {
+    public static InformationConcessionariaController getInstance() {
         if (null == INSTANCE) {
-            INSTANCE = new InformationPrivatoController();
+            INSTANCE = new InformationConcessionariaController();
         }
         return INSTANCE;
     }
@@ -34,7 +37,7 @@ public class InformationPrivatoController implements Initializable {
     static MessageUtil messageUtil = MessageUtil.getInstance();
 
     private InformationBean buildInformationBean() {
-        return new InformationBean(tfName, tfSurname, tfEmail,pfPassword, pfNewPassword, pfConfirmNewPassword, false, labelPwdStrength);
+        return new InformationBean(tfName, tfAddress, tfEmail, pfPassword, pfNewPassword, pfConfirmNewPassword, false, labelPwdStrength);
     }
 
     public InformationErrorBean buildInformationErrorBean(){
@@ -108,6 +111,9 @@ public class InformationPrivatoController implements Initializable {
     private PasswordField pfPassword;
 
     @FXML
+    private TextField tfAddress;
+
+    @FXML
     private TextField tfAdsNumber;
 
     @FXML
@@ -116,8 +122,6 @@ public class InformationPrivatoController implements Initializable {
     @FXML
     private TextField tfName;
 
-    @FXML
-    private TextField tfSurname;
 
     @FXML
     void goBack(ActionEvent event) throws IOException {
@@ -139,7 +143,7 @@ public class InformationPrivatoController implements Initializable {
 
     private void setTextFieldsEditable(boolean editable) {
         tfName.setEditable(editable);
-        tfSurname.setEditable(editable);
+        tfAddress.setEditable(editable);
         tfEmail.setEditable(editable);
         pfPassword.setEditable(editable);
     }
@@ -163,9 +167,9 @@ public class InformationPrivatoController implements Initializable {
     @FXML
     void save(ActionEvent event) {
         try {
-            if(hasChanges() && checkFieldsPrivato()) {
+            if(hasChanges() && checkFieldsConcessionaria()) {
                 String password = pfNewPassword.getText().isEmpty() ? pfPassword.getText() : pfNewPassword.getText();
-                Seller loggedUser = new Seller(main.getLoggedUser().getId(), tfName.getText().trim(), tfSurname.getText().trim(), tfEmail.getText().trim(), password, false);
+                Seller loggedUser = new Seller(main.getLoggedUser().getId(), tfName.getText().trim(), tfAddress.getText().trim(), tfEmail.getText().trim(), password, false);
                 informationService.editUser(loggedUser);
                 loggedUser.setLogged(true);
                 main.setLoggedUser(loggedUser);
@@ -176,8 +180,8 @@ public class InformationPrivatoController implements Initializable {
         }
     }
 
-    public boolean checkFieldsPrivato() throws SQLException {
-        return informationService.checkFieldsPrivato(buildInformationBean(), buildInformationErrorBean());
+    public boolean checkFieldsConcessionaria() throws SQLException {
+        return informationService.checkFieldsConcessionaria(buildInformationBean(), buildInformationErrorBean());
     }
 
     @Override
@@ -185,15 +189,14 @@ public class InformationPrivatoController implements Initializable {
         resetData();
     }
 
-
     private void resetData() {
         Seller loggedUser = main.getLoggedUser();
         tfName.setText(loggedUser.getName());
-        tfSurname.setText(loggedUser.getSurname());
+        tfAddress.setText(loggedUser.getAddress());
         tfEmail.setText(loggedUser.getEmail());
         pfNewPassword.setText("");
         pfConfirmNewPassword.setText("");
-        pfPassword.setText("");
+        pfNewPassword.setText("");
         setTfAndLabelsVisible(false);
         setTextFieldsEditable(false);
     }
@@ -205,6 +208,6 @@ public class InformationPrivatoController implements Initializable {
 
     @FXML
     void enableDisableSave(KeyEvent event) {
-        buttonSave.setDisable(informationService.enableDisableSavePrivato(buildInformationBean()));
+        buttonSave.setDisable(informationService.enableDisableSaveConcessionaria(buildInformationBean()));
     }
 }

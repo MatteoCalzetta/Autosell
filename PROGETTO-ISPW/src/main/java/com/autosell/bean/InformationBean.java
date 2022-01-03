@@ -1,5 +1,6 @@
 package com.autosell.bean;
 
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -13,11 +14,12 @@ public class InformationBean {
     private PasswordField pfConfirmNewPassword;
     private Boolean sellerType;
     private TextField tfAddress;
+    private Label labelPwdStrength;
 
     public InformationBean() {
     }
 
-    public InformationBean(TextField tfName, TextField tfSurnameOrAddress, TextField tfEmail, PasswordField tfOldPassword, PasswordField tfPassword, PasswordField tfConfirmPassword, Boolean sellerType) {
+    public InformationBean(TextField tfName, TextField tfSurnameOrAddress, TextField tfEmail, PasswordField tfOldPassword, PasswordField tfPassword, PasswordField tfConfirmPassword, Boolean sellerType, Label labelPwdStrength) {
         super();
         if (sellerType) {
             this.tfAddress = tfSurnameOrAddress;
@@ -30,6 +32,7 @@ public class InformationBean {
         this.pfNewPassword = tfPassword;
         this.pfConfirmNewPassword = tfConfirmPassword;
         this.sellerType = sellerType;
+        this.labelPwdStrength = labelPwdStrength;
     }
 
     public TextField getTfName() {
@@ -94,6 +97,14 @@ public class InformationBean {
 
     public void setTfAddress(TextField tfAddress) {
         this.tfAddress = tfAddress;
+    }
+
+    public Label getLabelPwdStrength() {
+        return labelPwdStrength;
+    }
+
+    public void setLabelPwdStrength(Label labelPwdStrength) {
+        this.labelPwdStrength = labelPwdStrength;
     }
 
     @Override

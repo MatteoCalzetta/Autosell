@@ -31,6 +31,14 @@ public class InformationService {
 
     public boolean hasChanges(InformationBean iBean) {
         Seller loggedUser = main.getLoggedUser();
+        if (iBean.getSellerType()) {
+            return !(iBean.getTfName().getText().trim().equals(loggedUser.getName())
+                    && iBean.getTfAddress().getText().trim().equals(loggedUser.getAddress())
+                    && iBean.getPfPassword().getText().trim().equals("")
+                    && iBean.getPfNewPassword().getText().trim().equals("")
+                    && iBean.getPfConfirmNewPassword().getText().trim().equals("")
+                    && iBean.getTfEmail().getText().trim().equals(loggedUser.getEmail()));
+        }
         return !(iBean.getTfName().getText().trim().equals(loggedUser.getName())
                 && iBean.getTfSurname().getText().trim().equals(loggedUser.getSurname())
                 && iBean.getPfPassword().getText().trim().equals("")
@@ -68,7 +76,8 @@ public class InformationService {
             checkPassed = false;
         } else {
             //Chiamata al servizio di Login per verificare che l'email non sia già registrata
-            if (null != loginDao.loginUser(bean.getTfEmail().getText())) {
+            Seller seller = loginDao.loginUser(bean.getTfEmail().getText());
+            if (null != seller && !seller.getEmail().equals(main.getLoggedUser().getEmail())) {
                 errorBean.getErrorEmail().setText(messageUtil.EMAIL_ALREADY_REGISTERED);
                 errorBean.getErrorEmail().setVisible(true);
                 checkPassed = false;
@@ -93,6 +102,7 @@ public class InformationService {
     }
 
     public boolean enableDisableSavePrivato(InformationBean informationPrivatoBean) {
+        checkPasswordStrength(informationPrivatoBean);
         if(informationPrivatoBean.getTfName().getText().trim().isEmpty()
                 || informationPrivatoBean.getTfSurname().getText().trim().isEmpty()
                 || informationPrivatoBean.getTfEmail().getText().trim().isEmpty()
@@ -113,6 +123,7 @@ public class InformationService {
     }
 
     public boolean enableDisableSaveConcessionaria(InformationBean informationConcessionariaBean) {
+        checkPasswordStrength(informationConcessionariaBean);
         if(informationConcessionariaBean.getTfName().getText().trim().isEmpty()
                 || informationConcessionariaBean.getTfEmail().getText().trim().isEmpty()
                 || informationConcessionariaBean.getPfPassword().getText().trim().isEmpty()
@@ -120,6 +131,27 @@ public class InformationService {
             return true;
         }
         return isPasswordChanged(informationConcessionariaBean);
+    }
+
+    private void checkPasswordStrength(InformationBean bean) {
+        int passwordStrength = stringUtil.calculatePasswordStrength(bean.getPfNewPassword().getText());
+        if (passwordStrength < 3) {
+            bean.getPfNewPassword().setStyle("-fx-background-color: white; -fx-border-color: black");
+            bean.getLabelPwdStrength().setStyle("-fx-text-fill: black");
+            bean.getLabelPwdStrength().setText("Too weak");
+        } else if (passwordStrength >= 3 && passwordStrength <= 4) {
+            bean.getPfNewPassword().setStyle("-fx-background-color: #ffebeb; -fx-border-color: red");
+            bean.getLabelPwdStrength().setStyle("-fx-text-fill: red");
+            bean.getLabelPwdStrength().setText("Weak");
+        } else if (passwordStrength >= 5 && passwordStrength <= 6) {
+            bean.getPfNewPassword().setStyle("-fx-background-color: #faf0c3; -fx-border-color: #cfb33a;");
+            bean.getLabelPwdStrength().setStyle("-fx-text-fill: #cfb33a;");
+            bean.getLabelPwdStrength().setText("Medium");
+        } else if (passwordStrength >= 7) {
+            bean.getPfNewPassword().setStyle("-fx-background-color: #d6ffd7; -fx-border-color: green;");
+            bean.getLabelPwdStrength().setStyle("-fx-text-fill: green;");
+            bean.getLabelPwdStrength().setText("Strong");
+        }
     }
 
     public void editUser(Seller loggedUser) throws SQLException {

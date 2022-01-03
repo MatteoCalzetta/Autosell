@@ -47,7 +47,7 @@ public class QueryUtil {
     public String SELECT_ALL_CARS = SELECT + TABLE_CAR + STAR + FROM + TABLE_CAR;
     public String LOGIN_USER = SELECT_ALL_SELLERS + WHERE + "email" + EQ_PARAM;
     public String REGISTER_USER = INSERT + TABLE_SELLER + SELLER_VALUES + VALUES + "(" + PARAM_COMMA + PARAM_COMMA + PARAM_COMMA + PARAM_COMMA + PARAM_COMMA + PARAM + ")";
-    public String EDIT_USER = UPDATE + TABLE_SELLER + SET + "nome" + EQ_PARAMS_COMMA + "email" + EQ_PARAMS_COMMA + "password" + EQ_PARAMS_COMMA + "tipo_venditore" + EQ_PARAMS_COMMA + "indirizzo" + EQ_PARAM +
+    public String EDIT_USER = UPDATE + TABLE_SELLER + SET + "nome" + EQ_PARAMS_COMMA + "cognome" + EQ_PARAMS_COMMA + "email" + EQ_PARAMS_COMMA + "password" + EQ_PARAMS_COMMA + "tipo_venditore" + EQ_PARAMS_COMMA + "indirizzo" + EQ_PARAM +
             WHERE + SELLER_ID + EQ_PARAM;
     public String GET_AD_NUMBER = SELECT + COUNT + FROM + TABLE_AD + WHERE + TABLE_AD + ".id_" + TABLE_SELLER + EQ_PARAM;
 

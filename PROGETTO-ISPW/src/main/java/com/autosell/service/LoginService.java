@@ -24,8 +24,8 @@ public class LoginService {
 	}
 
 	public Seller loginUser(LoginBean loginBean) throws IOException, SQLException {
-		loginBean.getTfEmail().setText("luigi.talamo31@gmail.com");
-		loginBean.getPfPassword().setText("luigii");
+		//loginBean.getTfEmail().setText("luigi.talamo31@gmail.com");
+		//loginBean.getPfPassword().setText("luigii");
 		if (loginBean.getTfEmail().getText().trim().isEmpty()) {
 			throw new SQLException("Il campo email è vuoto!");
 		}
