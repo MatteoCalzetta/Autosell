@@ -4,15 +4,13 @@ import com.autosell.Main;
 import com.autosell.bean.InformationBean;
 import com.autosell.bean.InformationErrorBean;
 import com.autosell.model.Seller;
+import com.autosell.service.AdsService;
 import com.autosell.service.InformationService;
 import com.autosell.util.MessageUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Rectangle;
 
@@ -37,11 +35,11 @@ public class InformationConcessionariaController implements Initializable {
     static MessageUtil messageUtil = MessageUtil.getInstance();
 
     private InformationBean buildInformationBean() {
-        return new InformationBean(tfName, tfAddress, tfEmail, pfPassword, pfNewPassword, pfConfirmNewPassword, false, labelPwdStrength);
+        return new InformationBean(tfName, tfAddress, tfEmail, pfPassword, pfNewPassword, pfConfirmNewPassword, true, labelPwdStrength);
     }
 
     public InformationErrorBean buildInformationErrorBean(){
-        return new InformationErrorBean(errorEmail, errorPassword, errorNewPassword, errorConfirmNewPassword);
+        return new InformationErrorBean(errorEmail, errorPassword, errorNewPassword, errorConfirmNewPassword, errorAddress);
     }
 
     @FXML
@@ -57,6 +55,9 @@ public class InformationConcessionariaController implements Initializable {
     private Button buttonSave;
 
     @FXML
+    private Label errorAddress;
+
+    @FXML
     private Label errorConfirmNewPassword;
 
     @FXML
@@ -70,6 +71,9 @@ public class InformationConcessionariaController implements Initializable {
 
     @FXML
     private Label labelAccountData;
+
+    @FXML
+    private Label labelAddress;
 
     @FXML
     private Label labelAdsNumber;
@@ -99,9 +103,6 @@ public class InformationConcessionariaController implements Initializable {
     private Label labelPwdStrength;
 
     @FXML
-    private Label labelSurname;
-
-    @FXML
     private PasswordField pfConfirmNewPassword;
 
     @FXML
@@ -124,20 +125,27 @@ public class InformationConcessionariaController implements Initializable {
 
 
     @FXML
-    void goBack(ActionEvent event) throws IOException {
-        if (buttonEdit.isVisible()) {
-            main.changeScene("UserPage.fxml");
-        } else {
-            if (hasChanges()) {
-                boolean result = messageUtil.printAlertYesOrNo(messageUtil.CONFIRM_GO_BACK);
-                if (!result) {
-                    main.changeScene("UserPage.fxml");
+    void goBack(ActionEvent event) {
+        try {
+            if (buttonEdit.isVisible()) {
+                main.changeScene("UserPage.fxml");
+            } else {
+                if (hasChanges()) {
+                    boolean result = messageUtil.printAlertYesOrNo(messageUtil.CONFIRM_GO_BACK);
+                    if (result) {
+                        setTextFieldsEditable(false);
+                        setTfAndLabelsVisible(false);
+                        resetData();
+                    }
+                } else {
+                    setTextFieldsEditable(false);
+                    setTfAndLabelsVisible(false);
+                    resetData();
                 }
             }
-            pfConfirmNewPassword.setText("");
-            setTextFieldsEditable(false);
-            setTfAndLabelsVisible(false);
-            resetData();
+        } catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.NONE, messageUtil.GENERIC_ERROR, ButtonType.OK);
+            alert.showAndWait();
         }
     }
 
@@ -162,6 +170,11 @@ public class InformationConcessionariaController implements Initializable {
     void setEditable(ActionEvent event) {
         setTextFieldsEditable(true);
         setTfAndLabelsVisible(true);
+        setButtonsDisable(true);
+    }
+
+    private void setButtonsDisable(boolean disabled) {
+        buttonSave.setDisable(disabled);
     }
 
     @FXML
@@ -169,9 +182,9 @@ public class InformationConcessionariaController implements Initializable {
         try {
             if(hasChanges() && checkFieldsConcessionaria()) {
                 String password = pfNewPassword.getText().isEmpty() ? pfPassword.getText() : pfNewPassword.getText();
-                Seller loggedUser = new Seller(main.getLoggedUser().getId(), tfName.getText().trim(), tfAddress.getText().trim(), tfEmail.getText().trim(), password, false);
+                Seller loggedUser = new Seller(main.getLoggedUser().getId(), tfName.getText().trim(), tfAddress.getText().trim(), tfEmail.getText().trim(),
+                        password, true);
                 informationService.editUser(loggedUser);
-                loggedUser.setLogged(true);
                 main.setLoggedUser(loggedUser);
                 resetData();
             }
@@ -191,10 +204,11 @@ public class InformationConcessionariaController implements Initializable {
 
     private void resetData() {
         Seller loggedUser = main.getLoggedUser();
+        tfAdsNumber.setText(""+loggedUser.getAdsList().size());
         tfName.setText(loggedUser.getName());
         tfAddress.setText(loggedUser.getAddress());
         tfEmail.setText(loggedUser.getEmail());
-        pfNewPassword.setText("");
+        pfPassword.setText("");
         pfConfirmNewPassword.setText("");
         pfNewPassword.setText("");
         setTfAndLabelsVisible(false);

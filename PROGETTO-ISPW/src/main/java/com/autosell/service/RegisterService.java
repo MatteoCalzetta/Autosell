@@ -15,7 +15,7 @@ import com.autosell.util.StringUtil;
 public class RegisterService {
 
 	static StringUtil stringUtil = StringUtil.getInstance();
-	static RegisterDAO registerDAO = RegisterDAOImpl.getInstance();
+	static RegisterDAO registerDao = RegisterDAOImpl.getInstance();
 	static LoginDAO loginDao = LoginDAOImpl.getInstance();
 	static MessageUtil messageUtil = MessageUtil.getInstance();
 
@@ -117,6 +117,6 @@ public class RegisterService {
 	}
 
 	public Seller registerUser(Seller user) throws SQLException {
-		return registerDAO.registerUser(user);
+		return registerDao.registerUser(user);
 	}
 }

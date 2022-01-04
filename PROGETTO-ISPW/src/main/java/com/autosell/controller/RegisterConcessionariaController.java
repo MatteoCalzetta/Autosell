@@ -120,7 +120,6 @@ public class RegisterConcessionariaController {
 			if (checkFieldsConcessionaria()) {
 				Seller user = new Seller(tfName.getText(), tfAddress.getText(), tfEmail.getText(), pfPassword.getText(), true);
 				user = registerService.registerUser(user);
-				user.setLogged(true);
 				main.setLoggedUser(user);
 				main.changeScene("Homepage.fxml");
 			}

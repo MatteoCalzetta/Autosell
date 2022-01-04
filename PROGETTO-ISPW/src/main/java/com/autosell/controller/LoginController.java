@@ -6,8 +6,10 @@ import java.sql.SQLException;
 import com.autosell.Main;
 import com.autosell.bean.LoginBean;
 import com.autosell.model.Seller;
+import com.autosell.service.AdsService;
 import com.autosell.service.LoginService;
 
+import com.autosell.util.MessageUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -44,6 +46,8 @@ public class LoginController {
 
 	static LoginService loginService = new LoginService();
 	static Main main = Main.getInstance();
+	static AdsService adsService = AdsService.getInstance();
+	static MessageUtil messageUtil = MessageUtil.getInstance();
 
 	@FXML
 	void setHomepage(ActionEvent event) throws IOException {
@@ -66,11 +70,11 @@ public class LoginController {
 		try {
 			LoginBean loginBean = buildLoginBean();
 			seller = loginService.loginUser(loginBean);
-			seller.setLogged(true);
 			main.setLoggedUser(seller);
 			main.changeScene("Homepage.fxml");
 		} catch (IOException e) {
-			System.out.println(e.getMessage());
+			Alert alert = new Alert(Alert.AlertType.NONE, messageUtil.GENERIC_ERROR, ButtonType.OK);
+			alert.showAndWait();
 		} catch (SQLException e) {
 			Alert alert = new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK);
 			alert.showAndWait();

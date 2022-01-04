@@ -89,12 +89,12 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <Label fx:id="labelSurname" focusTraversable="false" layoutX="645.0" layoutY="131.0" prefHeight="31.0" prefWidth="101.0" text="Address">
+            <Label fx:id="labelAddress" focusTraversable="false" layoutX="645.0" layoutY="131.0" prefHeight="31.0" prefWidth="101.0" text="Address">
                <font>
                   <Font size="21.0" />
                </font>
             </Label>
-            <TextField fx:id="tfAdsNumber" editable="false" focusTraversable="false" layoutX="203.0" layoutY="630.0" prefHeight="41.0" prefWidth="68.0" style="-fx-background-color: white; -fx-border-color: black;">
+            <TextField fx:id="tfAdsNumber" alignment="CENTER" editable="false" focusTraversable="false" layoutX="203.0" layoutY="630.0" prefHeight="41.0" prefWidth="68.0" style="-fx-background-color: white; -fx-border-color: black;">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font>
@@ -158,7 +158,7 @@
                   <Font size="18.0" />
                </font>
             </PasswordField>
-            <PasswordField fx:id="pfPassword" editable="false" focusTraversable="false" layoutX="203.0" layoutY="479.0" onKeyTyped="#enableDisableSave" prefHeight="41.0" prefWidth="359.0" style="-fx-background-color: white; -fx-border-color: black;">
+            <PasswordField fx:id="pfPassword" editable="false" focusTraversable="false" layoutX="203.0" layoutY="479.0" onKeyTyped="#enableDisableSave" prefHeight="41.0" prefWidth="359.0" promptText="Password is hidden for security reasons." style="-fx-background-color: white; -fx-border-color: black;">
                <font>
                   <Font size="18.0" />
                </font>
@@ -171,6 +171,11 @@
             <Label fx:id="labelPwdStrength" alignment="CENTER_RIGHT" focusTraversable="false" layoutX="922.0" layoutY="393.0" prefHeight="31.0" prefWidth="76.0" text="Too weak" visible="false">
                <font>
                   <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="errorAddress" focusTraversable="false" layoutX="646.0" layoutY="214.0" prefHeight="41.0" prefWidth="353.0" text="Address is not valid!" textFill="RED" visible="false">
+               <font>
+                  <Font size="19.0" />
                </font>
             </Label>
             </children>

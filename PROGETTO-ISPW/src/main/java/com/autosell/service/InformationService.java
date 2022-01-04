@@ -34,16 +34,14 @@ public class InformationService {
         if (iBean.getSellerType()) {
             return !(iBean.getTfName().getText().trim().equals(loggedUser.getName())
                     && iBean.getTfAddress().getText().trim().equals(loggedUser.getAddress())
-                    && iBean.getPfPassword().getText().trim().equals("")
-                    && iBean.getPfNewPassword().getText().trim().equals("")
-                    && iBean.getPfConfirmNewPassword().getText().trim().equals("")
+                    && iBean.getPfNewPassword().getText().trim().isBlank()
+                    && iBean.getPfConfirmNewPassword().getText().trim().isBlank()
                     && iBean.getTfEmail().getText().trim().equals(loggedUser.getEmail()));
         }
         return !(iBean.getTfName().getText().trim().equals(loggedUser.getName())
                 && iBean.getTfSurname().getText().trim().equals(loggedUser.getSurname())
-                && iBean.getPfPassword().getText().trim().equals("")
-                && iBean.getPfNewPassword().getText().trim().equals("")
-                && iBean.getPfConfirmNewPassword().getText().trim().equals("")
+                && iBean.getPfNewPassword().getText().trim().isBlank()
+                && iBean.getPfConfirmNewPassword().getText().trim().isBlank()
                 && iBean.getTfEmail().getText().trim().equals(loggedUser.getEmail()));
     }
 
@@ -53,6 +51,7 @@ public class InformationService {
 
     public boolean checkFieldsConcessionaria(InformationBean cBean, InformationErrorBean cErrorBean) throws SQLException {
         Boolean checkPassed = areCommonCheckPassed(cBean, cErrorBean);
+        cErrorBean.getErrorAddress().setVisible(false);
         if (!(stringUtil.containsIgnoreCase(cBean.getTfAddress().getText(), "Via")
                 || stringUtil.containsIgnoreCase(cBean.getTfAddress().getText(), "Largo")
                 || stringUtil.containsIgnoreCase(cBean.getTfAddress().getText(), "Piazza"))) {
@@ -75,16 +74,17 @@ public class InformationService {
             errorBean.getErrorEmail().setVisible(true);
             checkPassed = false;
         } else {
-            //Chiamata al servizio di Login per verificare che l'email non sia già registrata
-            Seller seller = loginDao.loginUser(bean.getTfEmail().getText());
-            if (null != seller && !seller.getEmail().equals(main.getLoggedUser().getEmail())) {
-                errorBean.getErrorEmail().setText(messageUtil.EMAIL_ALREADY_REGISTERED);
-                errorBean.getErrorEmail().setVisible(true);
-                checkPassed = false;
+            //Chiamata al servizio di Login per verificare che l'email non sia già registrata, solo se non è la sua email attuale
+            if (!bean.getTfEmail().getText().equals(main.getLoggedUser().getEmail())) {
+                if (null != loginDao.loginUser(bean.getTfEmail().getText())) {
+                    errorBean.getErrorEmail().setText(messageUtil.EMAIL_ALREADY_REGISTERED);
+                    errorBean.getErrorEmail().setVisible(true);
+                    checkPassed = false;
+                }
             }
         }
 
-        if (!bean.getPfNewPassword().getText().equals("") && bean.getPfNewPassword().getText().length() < 6) {
+        if (!bean.getPfNewPassword().getText().isBlank() && bean.getPfNewPassword().getText().length() < 6) {
             errorBean.getErrorNewPassword().setVisible(true);
             checkPassed = false;
         }

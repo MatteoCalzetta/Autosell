@@ -4,6 +4,7 @@ import com.autosell.Main;
 import com.autosell.bean.InformationBean;
 import com.autosell.bean.InformationErrorBean;
 import com.autosell.model.Seller;
+import com.autosell.service.AdsService;
 import com.autosell.service.InformationService;
 import com.autosell.util.MessageUtil;
 import javafx.event.ActionEvent;
@@ -32,6 +33,7 @@ public class InformationPrivatoController implements Initializable {
     static Main main = Main.getInstance();
     static InformationService informationService = InformationService.getInstance();
     static MessageUtil messageUtil = MessageUtil.getInstance();
+    static AdsService adsService = AdsService.getInstance();
 
     private InformationBean buildInformationBean() {
         return new InformationBean(tfName, tfSurname, tfEmail,pfPassword, pfNewPassword, pfConfirmNewPassword, false, labelPwdStrength);
@@ -120,44 +122,39 @@ public class InformationPrivatoController implements Initializable {
     private TextField tfSurname;
 
     @FXML
-    void goBack(ActionEvent event) throws IOException {
-        if (buttonEdit.isVisible()) {
-            main.changeScene("UserPage.fxml");
-        } else {
-            if (hasChanges()) {
-                boolean result = messageUtil.printAlertYesOrNo(messageUtil.CONFIRM_GO_BACK);
-                if (!result) {
-                    main.changeScene("UserPage.fxml");
+    void goBack(ActionEvent event) {
+        try {
+            if (buttonEdit.isVisible()) {
+                main.changeScene("UserPage.fxml");
+            } else {
+                if (hasChanges()) {
+                    boolean result = messageUtil.printAlertYesOrNo(messageUtil.CONFIRM_GO_BACK);
+                    if (result) {
+                        setTextFieldsEditable(false);
+                        setTfAndLabelsVisible(false);
+                        resetData();
+                    }
+                } else {
+                    setTextFieldsEditable(false);
+                    setTfAndLabelsVisible(false);
+                    resetData();
                 }
             }
-            pfConfirmNewPassword.setText("");
-            setTextFieldsEditable(false);
-            setTfAndLabelsVisible(false);
-            resetData();
+        }  catch (IOException e) {
+            Alert alert = new Alert(Alert.AlertType.NONE, messageUtil.GENERIC_ERROR, ButtonType.OK);
+            alert.showAndWait();
         }
-    }
-
-    private void setTextFieldsEditable(boolean editable) {
-        tfName.setEditable(editable);
-        tfSurname.setEditable(editable);
-        tfEmail.setEditable(editable);
-        pfPassword.setEditable(editable);
-    }
-
-    private void setTfAndLabelsVisible(boolean visible) {
-        buttonSave.setVisible(visible);
-        buttonEdit.setVisible(!visible);
-        pfConfirmNewPassword.setVisible(visible);
-        labelConfirmNewPassword.setVisible(visible);
-        pfNewPassword.setVisible(visible);
-        labelNewPassword.setVisible(visible);
-        labelPwdStrength.setVisible(visible);
     }
 
     @FXML
     void setEditable(ActionEvent event) {
         setTextFieldsEditable(true);
         setTfAndLabelsVisible(true);
+        setButtonsDisable(true);
+    }
+
+    private void setButtonsDisable(boolean disabled) {
+        buttonSave.setDisable(disabled);
     }
 
     @FXML
@@ -165,9 +162,9 @@ public class InformationPrivatoController implements Initializable {
         try {
             if(hasChanges() && checkFieldsPrivato()) {
                 String password = pfNewPassword.getText().isEmpty() ? pfPassword.getText() : pfNewPassword.getText();
-                Seller loggedUser = new Seller(main.getLoggedUser().getId(), tfName.getText().trim(), tfSurname.getText().trim(), tfEmail.getText().trim(), password, false);
+                Seller loggedUser = new Seller(main.getLoggedUser().getId(), tfName.getText().trim(), tfSurname.getText().trim(),
+                        tfEmail.getText().trim(), password, false);
                 informationService.editUser(loggedUser);
-                loggedUser.setLogged(true);
                 main.setLoggedUser(loggedUser);
                 resetData();
             }
@@ -188,14 +185,32 @@ public class InformationPrivatoController implements Initializable {
 
     private void resetData() {
         Seller loggedUser = main.getLoggedUser();
+        tfAdsNumber.setText(""+loggedUser.getAdsList().size());
         tfName.setText(loggedUser.getName());
         tfSurname.setText(loggedUser.getSurname());
         tfEmail.setText(loggedUser.getEmail());
-        pfNewPassword.setText("");
-        pfConfirmNewPassword.setText("");
         pfPassword.setText("");
+        pfConfirmNewPassword.setText("");
+        pfNewPassword.setText("");
         setTfAndLabelsVisible(false);
         setTextFieldsEditable(false);
+    }
+
+    private void setTextFieldsEditable(boolean editable) {
+        tfName.setEditable(editable);
+        tfSurname.setEditable(editable);
+        tfEmail.setEditable(editable);
+        pfPassword.setEditable(editable);
+    }
+
+    private void setTfAndLabelsVisible(boolean visible) {
+        buttonSave.setVisible(visible);
+        buttonEdit.setVisible(!visible);
+        pfConfirmNewPassword.setVisible(visible);
+        labelConfirmNewPassword.setVisible(visible);
+        pfNewPassword.setVisible(visible);
+        labelNewPassword.setVisible(visible);
+        labelPwdStrength.setVisible(visible);
     }
 
     private boolean hasChanges() {

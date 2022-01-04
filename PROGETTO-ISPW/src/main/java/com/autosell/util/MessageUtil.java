@@ -20,6 +20,8 @@ public class MessageUtil {
     public static final String EMAIL_NOT_VALID = "Email address is not valid!";
     public static final String NOT_LOGGED = "You must log in first!";
     public static final String CONFIRM_GO_BACK = "Are you sure you want to discard changes and go back?";
+    public static final String GENERIC_ERROR = "A generic error has occured.";
+    public static final String ERROR_GET_SELLER_ADS = "An error has occured while retrieving your ads!";
 
     public void printAlertOk(String alertString) {
         Alert alert = new Alert(Alert.AlertType.NONE, alertString, ButtonType.OK);
@@ -29,7 +31,7 @@ public class MessageUtil {
     public boolean printAlertYesOrNo(String stringAlert) {
         Alert alert = new Alert(Alert.AlertType.NONE, stringAlert, ButtonType.YES, ButtonType.NO);
         Optional<ButtonType> result = alert.showAndWait();
-        if (result.isPresent()) {
+        if (result.isPresent() && result.get() == ButtonType.YES) {
             return true;
         } else {
             return false;

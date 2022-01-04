@@ -112,7 +112,6 @@ public class RegisterPrivatoController {
             if(checkFieldsPrivato()) {
                 Seller user = new Seller(tfName.getText().trim(), tfSurname.getText().trim(), tfEmail.getText().trim(), pfPassword.getText(), false);
                 user = registerService.registerUser(user);
-                user.setLogged(true);
                 main.setLoggedUser(user);
                 main.changeScene("Homepage.fxml");
             }

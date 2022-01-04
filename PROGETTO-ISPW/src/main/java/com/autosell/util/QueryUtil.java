@@ -38,17 +38,19 @@ public class QueryUtil {
     public String EQ_PARAM = EQ + PARAM;
     public String EQ_PARAMS_COMMA = EQ + PARAM_COMMA;
     public String COUNT = " COUNT(*) ";
-    public String SELLER_ID = " venditore.id ";
+    public String ID = ".id ";
+    public String SELLER_ID = ".id_venditore ";
+    public String EMAIL = ".email";
     public String STAR = ".*";
 
     public String SELECT_ALL_ADS = SELECT + TABLE_AD + STAR + FROM + TABLE_AD;
     public String SELECT_ALL_SELLERS = SELECT + TABLE_SELLER + STAR + FROM + TABLE_SELLER;
     public String SELECT_ALL_FAVORITES = SELECT + TABLE_FAVORITE + STAR + FROM + TABLE_FAVORITE;
     public String SELECT_ALL_CARS = SELECT + TABLE_CAR + STAR + FROM + TABLE_CAR;
-    public String LOGIN_USER = SELECT_ALL_SELLERS + WHERE + "email" + EQ_PARAM;
+    public String LOGIN_USER = SELECT_ALL_SELLERS + WHERE + TABLE_SELLER + EMAIL + EQ_PARAM;
     public String REGISTER_USER = INSERT + TABLE_SELLER + SELLER_VALUES + VALUES + "(" + PARAM_COMMA + PARAM_COMMA + PARAM_COMMA + PARAM_COMMA + PARAM_COMMA + PARAM + ")";
     public String EDIT_USER = UPDATE + TABLE_SELLER + SET + "nome" + EQ_PARAMS_COMMA + "cognome" + EQ_PARAMS_COMMA + "email" + EQ_PARAMS_COMMA + "password" + EQ_PARAMS_COMMA + "tipo_venditore" + EQ_PARAMS_COMMA + "indirizzo" + EQ_PARAM +
-            WHERE + SELLER_ID + EQ_PARAM;
-    public String GET_AD_NUMBER = SELECT + COUNT + FROM + TABLE_AD + WHERE + TABLE_AD + ".id_" + TABLE_SELLER + EQ_PARAM;
+            WHERE + TABLE_SELLER + ID + EQ_PARAM;
+    public String GET_ADS_BY_ID = SELECT + TABLE_AD + STAR + FROM + TABLE_AD + WHERE + TABLE_AD + SELLER_ID + EQ_PARAM;
 
 }

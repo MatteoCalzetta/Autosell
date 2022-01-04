@@ -124,6 +124,8 @@
       <workItem from="1641223956419" duration="7519000" />
       <workItem from="1641231389515" duration="600000" />
       <workItem from="1641232297530" duration="3840000" />
+      <workItem from="1641237503703" duration="146000" />
+      <workItem from="1641303613802" duration="12555000" />
     </task>
     <servers />
   </component>
@@ -131,14 +133,6 @@
     <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="bean.pfPassword.text" />

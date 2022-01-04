@@ -13,18 +13,18 @@ public class Seller {
 	private Boolean sellerType = false;
 	private String address = "";
 	private Boolean logged = false;
-	private List<Ad> adList = new ArrayList<>();
+	private List<Ad> adsList = new ArrayList<>();
 
 	public Seller() {
 		super();
 	}
 
-	public Seller(String name, String surnameOAddress, String email, String password, Boolean sellerType) {
+	public Seller(String name, String surnameOrAddress, String email, String password, Boolean sellerType) {
 		super();
 		if (sellerType) {
-			this.address = surnameOAddress;
+			this.address = surnameOrAddress;
 		} else {
-			this.surname = surnameOAddress;
+			this.surname = surnameOrAddress;
 		}
 		this.name = name;
 		this.email = email;
@@ -32,12 +32,12 @@ public class Seller {
 		this.sellerType = sellerType;
 	}
 
-	public Seller(Long id, String name, String surnameOAddress, String email, String password, Boolean sellerType) {
+	public Seller(Long id, String name, String surnameOrAddress, String email, String password, Boolean sellerType) {
 		super();
 		if (sellerType) {
-			this.address = surnameOAddress;
+			this.address = surnameOrAddress;
 		} else {
-			this.surname = surnameOAddress;
+			this.surname = surnameOrAddress;
 		}
 		this.id = id;
 		this.name = name;
@@ -114,11 +114,11 @@ public class Seller {
 		return this.name + " " + this.surname;
 	}
 
-	public List<Ad> getAdList() {
-		return adList;
+	public List<Ad> getAdsList() {
+		return adsList;
 	}
 
-	public void setAdList(List<Ad> adList) {
-		this.adList = adList;
+	public void setAdsList(List<Ad> adsList) {
+		this.adsList = adsList;
 	}
 }
