@@ -25,27 +25,12 @@
                     </image>
                 </ImageView>
                 <Rectangle fx:id="background" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="734.0" layoutX="171.0" layoutY="-11.0" stroke="BLACK" strokeType="INSIDE" width="938.0" />
-                <Label fx:id="labelRegister" layoutX="494.0" layoutY="22.0" text="Il mio profilo">
+                <Label fx:id="labelRegister" layoutX="557.0" layoutY="22.0" text="My profile">
                     <font>
                         <Font name="System Bold" size="34.0" />
                     </font>
                 </Label>
-                <Label fx:id="errorConfirmPassword" layoutX="641.0" layoutY="363.0" prefHeight="38.0" prefWidth="333.0" text="Le password non coincidono" textFill="RED" visible="false">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <Label fx:id="errorEmail" layoutX="194.0" layoutY="237.0" prefHeight="38.0" prefWidth="186.0" text="Indirizzo email non valido" textFill="RED" visible="false">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <Label fx:id="errorPassword" layoutX="194.0" layoutY="363.0" prefHeight="38.0" prefWidth="295.0" text="Password non valida" textFill="RED" visible="false">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <Button fx:id="buttonBack" layoutX="961.0" layoutY="661.0" mnemonicParsing="false" onAction="#setHomepage" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #097ccf; -fx-border-color: black;" text="Indietro" textFill="WHITE">
+                <Button fx:id="buttonBack" layoutX="961.0" layoutY="661.0" mnemonicParsing="false" onAction="#setHomepage" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #097ccf; -fx-border-color: black;" text="Back" textFill="WHITE">
                     <font>
                         <Font name="System" size="22.0" />
                     </font>
@@ -53,7 +38,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-            <Button fx:id="buttonInformation" layoutX="382.0" layoutY="151.0" mnemonicParsing="false" onAction="#setInformationPage" prefHeight="69.0" prefWidth="435.0" style="-fx-background-color: white; -fx-border-color: #097ccf;" text="Visualizza informazioni ">
+            <Button fx:id="buttonInformation" layoutX="420.0" layoutY="151.0" mnemonicParsing="false" onAction="#setInformationPage" prefHeight="69.0" prefWidth="435.0" style="-fx-background-color: white; -fx-border-color: #097ccf;" text="View information">
                <font>
                   <Font size="21.0" />
                </font>
@@ -61,7 +46,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="buttonFavourites" layoutX="382.0" layoutY="321.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="435.0" style="-fx-background-color: white; -fx-border-color: #097ccf;" text="I miei preferiti">
+            <Button fx:id="buttonFavourites" layoutX="420.0" layoutY="321.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="435.0" style="-fx-background-color: white; -fx-border-color: #097ccf;" text="My favourites">
                <font>
                   <Font size="21.0" />
                </font>
@@ -69,7 +54,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="buttonMyADS" layoutX="380.0" layoutY="491.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="435.0" style="-fx-background-color: white; -fx-border-color: #097ccf;" text="I miei annunci">
+            <Button fx:id="buttonMyADS" layoutX="418.0" layoutY="491.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="435.0" style="-fx-background-color: white; -fx-border-color: #097ccf;" text="My ads">
                <font>
                   <Font size="21.0" />
                </font>
@@ -77,17 +62,17 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <ImageView fitHeight="50.0" fitWidth="75.0" layoutX="737.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="50.0" fitWidth="75.0" layoutX="775.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons_and_pics/M6ezc.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="75.0" layoutX="737.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="50.0" fitWidth="75.0" layoutX="775.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons_and_pics/free-favourite-icon-2765-thumb.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="75.0" layoutX="736.0" layoutY="501.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="50.0" fitWidth="75.0" layoutX="774.0" layoutY="501.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons_and_pics/list.png" />
                </image>

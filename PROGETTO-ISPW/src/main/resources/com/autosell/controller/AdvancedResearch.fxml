@@ -33,7 +33,7 @@
                         <Image url="@../Icons_and_pics/black.png" />
                     </image>
                 </ImageView>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="639.0" layoutX="171.0" layoutY="87.0" stroke="BLACK" strokeType="INSIDE" width="938.0" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="639.0" layoutX="171.0" layoutY="86.0" stroke="BLACK" strokeType="INSIDE" width="938.0" />
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="566.0" layoutX="185.0" layoutY="144.0" stroke="BLACK" strokeType="INSIDE" width="908.0" />
                 <Button fx:id="buttonAutosell" layoutX="5.0" layoutY="9.0" mnemonicParsing="false" onAction="#setHomepage" style="-fx-background-color: black; -fx-text-fill: white;" text="Autosell">
                     <font>
@@ -43,23 +43,22 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-                <TextField editable="false" layoutX="174.0" layoutY="95.0" prefHeight="38.0" prefWidth="206.0" style="-fx-background-color: white;" text="Ricerca avanzata">
+                <TextField editable="false" layoutX="174.0" layoutY="95.0" prefHeight="38.0" prefWidth="206.0" style="-fx-background-color: white;" text="Advanced research">
                     <font>
                         <Font name="Times New Roman Bold" size="21.0" />
                     </font>
                 </TextField>
-                <TextField editable="false" layoutX="193.0" layoutY="162.0" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: white;" text="Marca">
+                <TextField editable="false" layoutX="193.0" layoutY="162.0" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: white;" text="Brand">
                     <font>
                         <Font name="Times New Roman" size="17.0" />
                     </font></TextField>
-                <MenuButton layoutX="203.0" layoutY="210.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="Tutto">
+                <MenuButton layoutX="203.0" layoutY="210.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="All">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Tutto" />
                         <MenuItem mnemonicParsing="false" text="BMW" />
                         <MenuItem mnemonicParsing="false" text="Audi" />
                         <MenuItem mnemonicParsing="false" text="Tesla" />
                         <MenuItem mnemonicParsing="false" text="Alfa Romeo" />
-                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
                     </items>
                     <font>
                         <Font name="Times New Roman Italic" size="12.0" />
@@ -68,7 +67,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </MenuButton>
-                <MenuButton layoutX="924.0" layoutY="210.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="Tutto">
+                <MenuButton layoutX="924.0" layoutY="210.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="All">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Action 1" />
                         <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -80,7 +79,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </MenuButton>
-                <MenuButton layoutX="565.0" layoutY="210.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="Tutto">
+                <MenuButton layoutX="565.0" layoutY="210.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="All">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Action 1" />
                         <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -92,19 +91,19 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </MenuButton>
-                <TextField editable="false" layoutX="555.0" layoutY="162.0" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: white;" text="Modello">
+                <TextField editable="false" layoutX="555.0" layoutY="162.0" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: white;" text="Model">
                     <font>
                         <Font name="Times New Roman" size="17.0" />
                     </font></TextField>
-                <TextField editable="false" layoutX="914.0" layoutY="162.0" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: white;" text="Versione">
+                <TextField editable="false" layoutX="914.0" layoutY="162.0" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: white;" text="Version">
                     <font>
                         <Font name="Times New Roman" size="17.0" />
                     </font></TextField>
-                <TextField editable="false" layoutX="193.0" layoutY="277.0" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: white;" text="Carrozzeria">
+                <TextField editable="false" layoutX="193.0" layoutY="277.0" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: white;" text="Car body">
                     <font>
                         <Font name="Times New Roman" size="17.0" />
                     </font></TextField>
-                <TextField layoutX="924.0" layoutY="326.0" prefHeight="25.0" prefWidth="75.0" promptText="da" style="-fx-background-color: white; -fx-border-color: black;">
+                <TextField layoutX="924.0" layoutY="326.0" prefHeight="25.0" prefWidth="75.0" promptText="from" style="-fx-background-color: white; -fx-border-color: black;">
                     <font>
                         <Font name="Times New Roman Italic" size="12.0" />
                     </font>
@@ -112,10 +111,10 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
                 </TextField>
-                <MenuButton layoutX="203.0" layoutY="325.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="Tutto">
+                <MenuButton layoutX="203.0" layoutY="325.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="All">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Action 1" />
-                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                        <MenuItem mnemonicParsing="false" text="SUV" />
+                        <MenuItem mnemonicParsing="false" text="Hatchback" />
                     </items>
                     <font>
                         <Font name="Times New Roman Italic" size="12.0" />
@@ -124,16 +123,16 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </MenuButton>
-                <TextField editable="false" layoutX="556.0" layoutY="277.0" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: white;" text="Motore">
+                <TextField editable="false" layoutX="556.0" layoutY="277.0" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: white;" text="Engine">
                     <font>
                         <Font name="Times New Roman" size="17.0" />
                     </font></TextField>
-                <MenuButton layoutX="565.0" layoutY="325.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="Tutto">
+                <MenuButton layoutX="565.0" layoutY="325.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="All">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Tutto" />
-                        <MenuItem mnemonicParsing="false" text="Benzina" />
+                        <MenuItem mnemonicParsing="false" text="Gas" />
                         <MenuItem mnemonicParsing="false" text="Diesel" />
-                        <MenuItem mnemonicParsing="false" text="Elettrico" />
+                        <MenuItem mnemonicParsing="false" text="Electrical" />
                     </items>
                     <font>
                         <Font name="Times New Roman Italic" size="12.0" />
@@ -142,15 +141,15 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </MenuButton>
-                <TextField editable="false" layoutX="914.0" layoutY="277.0" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: white;" text="Chilometraggio">
+                <TextField editable="false" layoutX="914.0" layoutY="277.0" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: white;" text="Mileage">
                     <font>
                         <Font name="Times New Roman" size="17.0" />
                     </font></TextField>
-                <TextField editable="false" layoutX="193.0" layoutY="407.0" prefHeight="32.0" prefWidth="251.0" style="-fx-background-color: white;" text="Marca           da                a">
+                <TextField editable="false" layoutX="193.0" layoutY="407.0" prefHeight="32.0" prefWidth="251.0" style="-fx-background-color: white;" text="Power         from           to">
                     <font>
                         <Font name="Times New Roman" size="17.0" />
                     </font></TextField>
-                <MenuButton layoutX="203.0" layoutY="455.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="62.0" style="-fx-background-color: white; -fx-border-color: black;" text="CV">
+                <MenuButton layoutX="203.0" layoutY="455.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="62.0" style="-fx-background-color: white; -fx-border-color: black;" text="HP">
                     <items>
                         <MenuItem mnemonicParsing="false" text="CV" />
                         <MenuItem mnemonicParsing="false" text="KW" />
@@ -178,15 +177,15 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
                 </TextField>
-                <TextField editable="false" layoutX="556.0" layoutY="407.0" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: white;" text="Cambio">
+                <TextField editable="false" layoutX="556.0" layoutY="407.0" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: white;" text="Gearbox">
                     <font>
                         <Font name="Times New Roman" size="17.0" />
                     </font></TextField>
-                <MenuButton layoutX="566.0" layoutY="455.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="Tutto">
+                <MenuButton layoutX="566.0" layoutY="455.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="All">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Tutto" />
-                        <MenuItem mnemonicParsing="false" text="Manuale" />
-                        <MenuItem mnemonicParsing="false" text="Automatico" />
+                        <MenuItem mnemonicParsing="false" text="Manual" />
+                        <MenuItem mnemonicParsing="false" text="Automatic" />
                     </items>
                     <font>
                         <Font name="Times New Roman Italic" size="12.0" />
@@ -195,11 +194,11 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </MenuButton>
-                <TextField editable="false" layoutX="914.0" layoutY="407.0" prefHeight="32.0" prefWidth="158.0" style="-fx-background-color: white;" text="Numero di porte">
+                <TextField editable="false" layoutX="914.0" layoutY="407.0" prefHeight="32.0" prefWidth="158.0" style="-fx-background-color: white;" text="Number of doors">
                     <font>
                         <Font name="Times New Roman" size="17.0" />
                     </font></TextField>
-                <Button layoutX="900.0" layoutY="656.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="178.0" style="-fx-background-color: #097ccf; -fx-text-fill: white; -fx-border-color: black;" text="Vedi risultati">
+                <Button layoutX="900.0" layoutY="656.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="178.0" style="-fx-background-color: #097ccf; -fx-text-fill: white; -fx-border-color: black;" text="Show results">
                     <font>
                         <Font name="Times New Roman Bold" size="22.0" />
                     </font>
@@ -207,7 +206,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-                <MenuButton layoutX="924.0" layoutY="455.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="Tutto">
+                <MenuButton layoutX="924.0" layoutY="455.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="All">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Tutto" />
                         <MenuItem mnemonicParsing="false" text="3" />
@@ -220,11 +219,11 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </MenuButton>
-                <TextField editable="false" layoutX="193.0" layoutY="540.0" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: white;" text="Numero di posti">
+                <TextField editable="false" layoutX="193.0" layoutY="540.0" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: white;" text="Number of seats">
                     <font>
                         <Font name="Times New Roman" size="17.0" />
                     </font></TextField>
-                <MenuButton layoutX="203.0" layoutY="588.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="Tutto">
+                <MenuButton layoutX="203.0" layoutY="588.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="All">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Tutto" />
                         <MenuItem mnemonicParsing="false" text="2" />
@@ -238,15 +237,15 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </MenuButton>
-                <TextField editable="false" layoutX="556.0" layoutY="540.0" prefHeight="32.0" prefWidth="158.0" style="-fx-background-color: white;" text="Venditore">
+                <TextField editable="false" layoutX="556.0" layoutY="540.0" prefHeight="32.0" prefWidth="158.0" style="-fx-background-color: white;" text="Seller">
                     <font>
                         <Font name="Times New Roman" size="17.0" />
                     </font></TextField>
-                <MenuButton layoutX="566.0" layoutY="588.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="Tutto">
+                <MenuButton layoutX="566.0" layoutY="588.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-color: black;" text="All">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Tutto" />
-                        <MenuItem mnemonicParsing="false" text="Concessionaria" />
-                        <MenuItem mnemonicParsing="false" text="Privato" />
+                        <MenuItem mnemonicParsing="false" text="Dealership" />
+                        <MenuItem mnemonicParsing="false" text="Private" />
                     </items>
                     <font>
                         <Font name="Times New Roman Italic" size="12.0" />
@@ -255,7 +254,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </MenuButton>
-                <TextField layoutX="1007.0" layoutY="326.0" prefHeight="25.0" prefWidth="75.0" promptText="a" style="-fx-background-color: white; -fx-border-color: black;">
+                <TextField layoutX="1007.0" layoutY="326.0" prefHeight="25.0" prefWidth="75.0" promptText="to" style="-fx-background-color: white; -fx-border-color: black;">
                     <font>
                         <Font name="Times New Roman Italic" size="12.0" />
                     </font>

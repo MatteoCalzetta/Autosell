@@ -16,13 +16,13 @@
         <AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;">
             <children>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" fill="WHITE" height="639.0" layoutX="171.0" layoutY="86.0" stroke="BLACK" strokeType="INSIDE" width="938.0" />
-                <Label layoutX="519.0" layoutY="95.0" prefHeight="35.0" prefWidth="230.0" text="Prezzo e descrizione">
+                <Label layoutX="511.0" layoutY="95.0" prefHeight="35.0" prefWidth="242.0" text="Price and Description">
                     <font>
                         <Font name="System Bold" size="24.0" />
                     </font>
                 </Label>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="85.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: black;" width="1280.0" />
-                <TextField layoutX="183.0" layoutY="175.0" prefHeight="27.0" prefWidth="187.0" promptText="Inserisci prezzo" style="-fx-background-color: white; -fx-border-color: black;">
+                <TextField layoutX="183.0" layoutY="175.0" prefHeight="27.0" prefWidth="187.0" promptText="Insert Price" style="-fx-background-color: white; -fx-border-color: black;">
                     <font>
                         <Font name="System Italic" size="12.0" />
                     </font>
@@ -38,7 +38,7 @@
                 </ImageView>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="389.0" layoutX="673.0" layoutY="252.0" stroke="BLACK" strokeType="INSIDE" width="421.0" />
                 <ImageView fitHeight="373.0" fitWidth="404.0" layoutX="681.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" />
-                <Label layoutX="183.0" layoutY="139.0" prefHeight="26.0" prefWidth="54.0" text="Prezzo">
+                <Label layoutX="183.0" layoutY="139.0" prefHeight="26.0" prefWidth="54.0" text="Price">
                     <font>
                         <Font size="17.0" />
                     </font>
@@ -62,7 +62,7 @@
                </cursor>
                 </Button>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="373.0" layoutX="682.0" layoutY="260.0" stroke="BLACK" strokeType="INSIDE" width="404.0" />
-                <Button disable="true" layoutX="966.0" layoutY="654.0" mnemonicParsing="false" prefWidth="127.0" style="-fx-background-color: #097ccf; -fx-border-color: black;" text="Procedi" textFill="WHITE">
+                <Button disable="true" layoutX="966.0" layoutY="654.0" mnemonicParsing="false" prefWidth="127.0" style="-fx-background-color: #097ccf; -fx-border-color: black;" text="Proceed" textFill="WHITE">
                     <font>
                         <Font size="22.0" />
                     </font>
@@ -70,7 +70,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-                <TextField alignment="TOP_LEFT" layoutX="183.0" layoutY="252.0" prefHeight="389.0" prefWidth="449.0" promptText="Inserisci una descrizione della vettura" style="-fx-background-color: white; -fx-border-color: black;">
+                <TextField alignment="TOP_LEFT" layoutX="183.0" layoutY="252.0" prefHeight="389.0" prefWidth="449.0" promptText="Insert the description of the car" style="-fx-background-color: white; -fx-border-color: black;">
                     <font>
                         <Font name="System Italic" size="12.0" />
                     </font>
@@ -78,12 +78,12 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
                 </TextField>
-                <Label layoutX="183.0" layoutY="216.0" prefHeight="26.0" prefWidth="90.0" text="Descrizione">
+                <Label layoutX="183.0" layoutY="216.0" prefHeight="26.0" prefWidth="90.0" text="Description">
                     <font>
                         <Font size="17.0" />
                     </font>
                 </Label>
-                <Button fx:id="buttonBack" layoutX="825.0" layoutY="654.0" mnemonicParsing="false" onAction="#goBack" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #097ccf; -fx-border-color: black;" text="Indietro" textFill="WHITE">
+                <Button fx:id="buttonBack" layoutX="825.0" layoutY="654.0" mnemonicParsing="false" onAction="#goBack" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #097ccf; -fx-border-color: black;" text="Back" textFill="WHITE">
                     <font>
                         <Font name="System" size="22.0" />
                     </font>
@@ -91,7 +91,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-                <Label layoutX="673.0" layoutY="216.0" prefHeight="26.0" prefWidth="280.0" text="Inserisci le immagini della vettura qui">
+                <Label layoutX="673.0" layoutY="216.0" prefHeight="26.0" prefWidth="280.0" text="Insert pictures of the car here">
                     <font>
                         <Font size="17.0" />
                     </font>

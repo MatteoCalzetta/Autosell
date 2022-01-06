@@ -27,7 +27,7 @@
                     </image>
                 </ImageView>
                 <Rectangle fx:id="background" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="734.0" layoutX="171.0" layoutY="-11.0" stroke="BLACK" strokeType="INSIDE" width="938.0" />
-                <TextField fx:id="tfEmail" focusTraversable="false" layoutX="193.0" layoutY="193.0" onInputMethodTextChanged="#enableDisableRegister" onKeyTyped="#enableDisableRegister" prefHeight="38.0" prefWidth="537.0" promptText="Inserire email" style="-fx-background-color: white; -fx-border-color: black;">
+                <TextField fx:id="tfEmail" focusTraversable="false" layoutX="193.0" layoutY="193.0" onInputMethodTextChanged="#enableDisableRegister" onKeyTyped="#enableDisableRegister" prefHeight="38.0" prefWidth="537.0" promptText="Enter email" style="-fx-background-color: white; -fx-border-color: black;">
                     <font>
                         <Font name="System Italic" size="18.0" />
                     </font>
@@ -35,12 +35,12 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
                 </TextField>
-                <Label fx:id="labelMandatoryFields" layoutX="194.0" layoutY="672.0" text="Tutti i campi contrassegnati con * sono obbligatori">
+                <Label fx:id="labelMandatoryFields" layoutX="194.0" layoutY="672.0" text="All fields marked with * are mandatory">
                     <font>
                         <Font name="System Bold Italic" size="17.0" />
                     </font>
                 </Label>
-                <Button fx:id="buttonRegister" disable="true" layoutX="961.0" layoutY="651.0" mnemonicParsing="false" onAction="#userRegister" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #097ccf; -fx-border-color: black;" text="Registrati" textFill="WHITE">
+                <Button fx:id="buttonRegister" disable="true" layoutX="961.0" layoutY="651.0" mnemonicParsing="false" onAction="#userRegister" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #097ccf; -fx-border-color: black;" text="Sign in" textFill="WHITE">
                     <font>
                         <Font name="System" size="22.0" />
                     </font>
@@ -48,12 +48,12 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-                <Label fx:id="labelRegister" layoutX="564.0" layoutY="20.0" text="Registrati">
+                <Label fx:id="labelRegister" layoutX="586.0" layoutY="20.0" text="Sign in">
                     <font>
                         <Font name="System Bold" size="34.0" />
                     </font>
                 </Label>
-                <TextField fx:id="tfName" focusTraversable="false" layoutX="193.0" layoutY="496.0" onKeyTyped="#enableDisableRegister" prefHeight="38.0" prefWidth="537.0" promptText="Inserire nome concessionaria" style="-fx-background-color: white; -fx-border-color: black;">
+                <TextField fx:id="tfName" focusTraversable="false" layoutX="193.0" layoutY="496.0" onKeyTyped="#enableDisableRegister" prefHeight="38.0" prefWidth="537.0" promptText="Enter dealership name" style="-fx-background-color: white; -fx-border-color: black;">
                     <font>
                         <Font name="System Italic" size="18.0" />
                     </font>
@@ -61,7 +61,7 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
                 </TextField>
-                <Label fx:id="labelEmail" layoutX="192.0" layoutY="152.0" prefHeight="31.0" prefWidth="145.0" text="Indirizzo email*">
+                <Label fx:id="labelEmail" layoutX="192.0" layoutY="152.0" prefHeight="31.0" prefWidth="145.0" text="Email address*">
                     <font>
                         <Font size="21.0" />
                     </font>
@@ -76,11 +76,11 @@
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelAccountData" layoutX="192.0" layoutY="107.0" prefHeight="17.0" prefWidth="162.0" text="Dati account">
+                <Label fx:id="labelAccountData" layoutX="192.0" layoutY="107.0" prefHeight="39.0" prefWidth="171.0" text="Account data">
                     <font>
                         <Font name="System Bold" size="27.0" />
                     </font></Label>
-                <TextField fx:id="tfAddress" focusTraversable="false" layoutX="193.0" layoutY="594.0" onKeyTyped="#enableDisableRegister" prefHeight="38.0" prefWidth="537.0" promptText="Inserire indirizzo" style="-fx-background-color: white; -fx-border-color: black;">
+                <TextField fx:id="tfAddress" focusTraversable="false" layoutX="193.0" layoutY="594.0" onKeyTyped="#enableDisableRegister" prefHeight="38.0" prefWidth="537.0" promptText="Enter address" style="-fx-background-color: white; -fx-border-color: black;">
                     <font>
                         <Font name="System Italic" size="18.0" />
                     </font>
@@ -93,32 +93,32 @@
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelPersonalData" layoutX="192.0" layoutY="410.0" prefHeight="39.0" prefWidth="253.0" text="Dati concessionaria">
+                <Label fx:id="labelPersonalData" layoutX="192.0" layoutY="410.0" prefHeight="39.0" prefWidth="253.0" text="Dealership data">
                     <font>
                         <Font name="System Bold" size="27.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelPassword" layoutX="192.0" layoutY="281.0" prefHeight="31.0" prefWidth="286.0" text="Password* (minimo 6 caratteri)">
+                <Label fx:id="labelPassword" layoutX="192.0" layoutY="281.0" prefHeight="31.0" prefWidth="324.0" text="Password* (minimum 6 characters)">
                     <font>
                         <Font size="21.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelConfirmPassword" layoutX="639.0" layoutY="281.0" prefHeight="31.0" prefWidth="196.0" text="Conferma password*">
+                <Label fx:id="labelConfirmPassword" layoutX="639.0" layoutY="281.0" prefHeight="31.0" prefWidth="196.0" text="Confirm password*">
                     <font>
                         <Font size="21.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelName" layoutX="194.0" layoutY="458.0" prefHeight="31.0" prefWidth="211.0" text="Nome concessionaria*">
+                <Label fx:id="labelName" layoutX="194.0" layoutY="458.0" prefHeight="31.0" prefWidth="211.0" text="Dealership name*">
                     <font>
                         <Font size="21.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelSurname" layoutX="194.0" layoutY="554.0" prefHeight="31.0" prefWidth="101.0" text="Indirizzo*">
+                <Label fx:id="labelSurname" layoutX="194.0" layoutY="554.0" prefHeight="31.0" prefWidth="101.0" text="Address*">
                     <font>
                         <Font size="21.0" />
                     </font>
                 </Label>
-                <Button fx:id="buttonBack" focusTraversable="false" layoutX="821.0" layoutY="651.0" mnemonicParsing="false" onAction="#goBack" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #097ccf; -fx-border-color: black;" text="Indietro" textFill="WHITE">
+                <Button fx:id="buttonBack" focusTraversable="false" layoutX="821.0" layoutY="651.0" mnemonicParsing="false" onAction="#goBack" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #097ccf; -fx-border-color: black;" text="Back" textFill="WHITE">
                     <font>
                         <Font name="System" size="22.0" />
                     </font>
@@ -131,7 +131,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <PasswordField fx:id="pfPassword" focusTraversable="false" layoutX="193.0" layoutY="322.0" onKeyTyped="#enableDisableRegister" prefHeight="41.0" prefWidth="361.0" promptText="Inserire password" style="-fx-background-color: white; -fx-border-color: black;">
+            <PasswordField fx:id="pfPassword" focusTraversable="false" layoutX="193.0" layoutY="322.0" onKeyTyped="#enableDisableRegister" prefHeight="41.0" prefWidth="361.0" promptText="Enter password" style="-fx-background-color: white; -fx-border-color: black;">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font>
@@ -139,7 +139,7 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </PasswordField>
-            <PasswordField fx:id="pfConfirmPassword" focusTraversable="false" layoutX="640.0" layoutY="322.0" onKeyTyped="#enableDisableRegister" prefHeight="41.0" prefWidth="361.0" promptText="Inserire password" style="-fx-background-color: white; -fx-border-color: black;">
+            <PasswordField fx:id="pfConfirmPassword" focusTraversable="false" layoutX="640.0" layoutY="322.0" onKeyTyped="#enableDisableRegister" prefHeight="41.0" prefWidth="361.0" promptText="Enter password" style="-fx-background-color: white; -fx-border-color: black;">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font>

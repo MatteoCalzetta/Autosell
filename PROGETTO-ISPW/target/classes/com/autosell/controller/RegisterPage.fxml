@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.autosell.controller.RegisterController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.autosell.controller.RegisterController">
     <children>
         <AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black;">
             <children>
@@ -25,42 +25,42 @@
                     </image>
                 </ImageView>
                 <Rectangle fx:id="background" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="734.0" layoutX="171.0" layoutY="-11.0" stroke="BLACK" strokeType="INSIDE" width="938.0" />
-                <TextField fx:id="tfEmail" layoutX="193.0" layoutY="193.0" onKeyTyped="#enableDisableRegister" prefHeight="38.0" prefWidth="537.0" promptText="Inserire email" style="-fx-background-color: white; -fx-border-color: black;">
+                <TextField fx:id="tfEmail" layoutX="193.0" layoutY="193.0" onKeyTyped="#enableDisableRegister" prefHeight="38.0" prefWidth="537.0" promptText="Enter email" style="-fx-background-color: white; -fx-border-color: black;">
                     <font>
                         <Font name="System Italic" size="18.0" />
                     </font>
                 </TextField>
-                <Label fx:id="labelMandatoryFields" layoutX="194.0" layoutY="662.0" text="Tutti i campi contrassegnati con * sono obbligatori">
+                <Label fx:id="labelMandatoryFields" layoutX="194.0" layoutY="662.0" text="All fields marked with * are mandatory">
                     <font>
                         <Font name="System Bold Italic" size="17.0" />
                     </font>
                 </Label>
-                <TextField fx:id="tfPassword" layoutX="193.0" layoutY="322.0" onKeyTyped="#enableDisableRegister" prefHeight="41.0" prefWidth="361.0" promptText="Inserire password" style="-fx-background-color: white; -fx-border-color: black;">
+                <TextField fx:id="tfPassword" layoutX="193.0" layoutY="322.0" onKeyTyped="#enableDisableRegister" prefHeight="41.0" prefWidth="361.0" promptText="Enter password" style="-fx-background-color: white; -fx-border-color: black;">
                     <font>
                         <Font name="System Italic" size="18.0" />
                     </font>
                 </TextField>
-                <Button fx:id="buttonRegister" disable="true" layoutX="961.0" layoutY="651.0" mnemonicParsing="false" onAction="#userRegister" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #097ccf; -fx-border-color: black;" text="Registrati" textFill="WHITE">
+                <Button fx:id="buttonRegister" disable="true" layoutX="961.0" layoutY="651.0" mnemonicParsing="false" onAction="#userRegister" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #097ccf; -fx-border-color: black;" text="Sign in" textFill="WHITE">
                     <font>
                         <Font name="System" size="22.0" />
                     </font>
                 </Button>
-                <Label fx:id="labelRegister" layoutX="564.0" layoutY="20.0" text="Registrati">
+                <Label fx:id="labelRegister" layoutX="586.0" layoutY="20.0" text="Sign in">
                     <font>
                         <Font name="System Bold" size="34.0" />
                     </font>
                 </Label>
-                <TextField fx:id="tfName" layoutX="193.0" layoutY="496.0" onKeyTyped="#enableDisableRegister" prefHeight="38.0" prefWidth="537.0" promptText="Inserire nome" style="-fx-background-color: white; -fx-border-color: black;">
+                <TextField fx:id="tfName" layoutX="193.0" layoutY="496.0" onKeyTyped="#enableDisableRegister" prefHeight="38.0" prefWidth="537.0" promptText="Enter name" style="-fx-background-color: white; -fx-border-color: black;">
                     <font>
                         <Font name="System Italic" size="18.0" />
                     </font>
                 </TextField>
-                <Label fx:id="labelEmail" layoutX="192.0" layoutY="152.0" prefHeight="31.0" prefWidth="145.0" text="Indirizzo email*">
+                <Label fx:id="labelEmail" layoutX="192.0" layoutY="152.0" prefHeight="31.0" prefWidth="145.0" text="Email address*">
                     <font>
                         <Font size="21.0" />
                     </font>
                 </Label>
-                <TextField fx:id="tfConfirmPassword" layoutX="640.0" layoutY="322.0" onKeyTyped="#enableDisableRegister" prefHeight="41.0" prefWidth="361.0" promptText="Reinserire password" style="-fx-background-color: white; -fx-border-color: black;">
+                <TextField fx:id="tfConfirmPassword" layoutX="640.0" layoutY="322.0" onKeyTyped="#enableDisableRegister" prefHeight="41.0" prefWidth="361.0" promptText="Enter password" style="-fx-background-color: white; -fx-border-color: black;">
                     <font>
                         <Font name="System Italic" size="18.0" />
                     </font>
@@ -75,11 +75,11 @@
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelAccountData" layoutX="192.0" layoutY="107.0" prefHeight="17.0" prefWidth="162.0" text="Dati account">
+                <Label fx:id="labelAccountData" layoutX="192.0" layoutY="107.0" prefHeight="39.0" prefWidth="171.0" text="Account data">
                     <font>
                         <Font name="System Bold" size="27.0" />
                     </font></Label>
-                <TextField fx:id="tfSurname" layoutX="193.0" layoutY="594.0" onKeyTyped="#enableDisableRegister" prefHeight="38.0" prefWidth="537.0" promptText="Inserire cognome" style="-fx-background-color: white; -fx-border-color: black;">
+                <TextField fx:id="tfSurname" layoutX="193.0" layoutY="594.0" onKeyTyped="#enableDisableRegister" prefHeight="38.0" prefWidth="537.0" promptText="Enter surname" style="-fx-background-color: white; -fx-border-color: black;">
                     <font>
                         <Font name="System Italic" size="18.0" />
                     </font>
@@ -89,32 +89,32 @@
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelPersonalData" layoutX="192.0" layoutY="410.0" prefHeight="39.0" prefWidth="180.0" text="Dati personali">
+                <Label fx:id="labelPersonalData" layoutX="192.0" layoutY="410.0" prefHeight="39.0" prefWidth="180.0" text="Personal data">
                     <font>
                         <Font name="System Bold" size="27.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelPassword" layoutX="192.0" layoutY="281.0" prefHeight="31.0" prefWidth="286.0" text="Password* (minimo 6 caratteri)">
+                <Label fx:id="labelPassword" layoutX="192.0" layoutY="281.0" prefHeight="31.0" prefWidth="320.0" text="Password* (minimum 6 characters)">
                     <font>
                         <Font size="21.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelConfirmPassword" layoutX="639.0" layoutY="281.0" prefHeight="31.0" prefWidth="196.0" text="Conferma password*">
+                <Label fx:id="labelConfirmPassword" layoutX="639.0" layoutY="281.0" prefHeight="31.0" prefWidth="196.0" text="Confirm password*">
                     <font>
                         <Font size="21.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelName" layoutX="194.0" layoutY="458.0" prefHeight="31.0" prefWidth="68.0" text="Nome*">
+                <Label fx:id="labelName" layoutX="194.0" layoutY="458.0" prefHeight="31.0" prefWidth="68.0" text="Name*">
                     <font>
                         <Font size="21.0" />
                     </font>
                 </Label>
-                <Label fx:id="labelSurname" layoutX="194.0" layoutY="554.0" prefHeight="31.0" prefWidth="101.0" text="Cognome*">
+                <Label fx:id="labelSurname" layoutX="194.0" layoutY="554.0" prefHeight="31.0" prefWidth="101.0" text="Surname*">
                     <font>
                         <Font size="21.0" />
                     </font>
                 </Label>
-                <Button fx:id="buttonBack" layoutX="821.0" layoutY="651.0" mnemonicParsing="false" onAction="#goBack" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #097ccf; -fx-border-color: black;" text="Indietro" textFill="WHITE">
+                <Button fx:id="buttonBack" layoutX="821.0" layoutY="651.0" mnemonicParsing="false" onAction="#goBack" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #097ccf; -fx-border-color: black;" text="Back" textFill="WHITE">
                     <font>
                         <Font name="System" size="22.0" />
                     </font>
